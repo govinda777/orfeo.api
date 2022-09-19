@@ -1,0 +1,41 @@
+pre code span.no-select {
+  user-select: none;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -o-user-select: none;
+  -ms-user-select: none;
+}
+
+.electron-version-container {
+  // Override Primer
+  figure {
+    margin: 0 !important;
+  }
+
+  .electron-version {
+    padding: 12px;
+    cursor: pointer;
+
+    pre {
+      max-width: calc(100vw - 50px);
+    }
+  }
+
+  @media (min-width: 768px) {
+    display: flex;
+
+    .electron-version {
+      flex: 1;
+      overflow: hidden;
+      transition: opacity 0.4s ease-in-out, flex 0.4s ease-in-out;
+
+      &.expanded-version {
+        flex: 2;
+      }
+
+      &.shrunk-version {
+        opacity: 0.6;
+      }
+    }
+  }
+}
